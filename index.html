@@ -1,5 +1,58 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
-<div style="text-align: center;">
-  <img src="logo.svg" style="height: 80%; padding-top: 10%; width: auto;">
+<link rel="stylesheet" href="pocketgrid.css" />
+<style>
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+#logo {
+    text-align: center;
+    height: 100%;
+}
+
+#logo img {
+    height: 80%;
+    padding-top: 5%;
+    width: auto;
+}
+
+.block {
+    width: 33%;
+    padding: 1%;
+}
+
+.block img {
+    width: 100%;
+    height: auto;
+}
+
+.container{
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+</style>
+<div id="logo">
+    <img src="img/logo.svg">
+</div>
+<div class="container">
+    <div class="block-group">
+        <div class="block"><img src="img/square.purple.png"></div>
+        <div class="block"><img src="img/cushion.green.png"></div>
+        <div class="block"><img src="img/circle.blue.png"></div>
+    </div>
+    <div class="block-group">
+        <div class="block"><img src="img/purple.circle.png"></div>
+        <div class="block"><img src="img/sharpcircle.pink.png"></div>
+        <div class="block"><img src="img/green.pear.png"></div>
+    </div>
+    <div class="block-group">
+        <div class="block"><img src="img/pink.triangle.png"></div>
+        <div class="block"><img src="img/rectangle.green.png"></div>
+        <div class="block"><img src="img/square.blue.png"></div>
+    </div>
 </div>
