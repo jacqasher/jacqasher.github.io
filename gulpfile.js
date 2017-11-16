@@ -6,6 +6,7 @@ var cleanCSS = require('gulp-clean-css');
 var rename = require("gulp-rename");
 var uglify = require('gulp-uglify');
 var filter = require('gulp-filter');
+var handlebars = require('gulp-compile-handlebars');
 var pkg = require('./package.json');
 
 // Set the banner content
@@ -89,6 +90,31 @@ gulp.task('copy', function() {
     .pipe(gulp.dest('vendor/font-awesome'))
 })
 
+var handlebars_vars = {
+  "portfolio_items": [
+    {"src": "img/portfolio/cabin.png", "href": "portfolioModal1"},
+    {"src": "img/portfolio/cake.png", "href": "portfolioModal2"},
+    {"src": "img/portfolio/circus.png", "href": "portfolioModal3"},
+    {"src": "img/portfolio/game.png", "href": "portfolioModal4"},
+    {"src": "img/portfolio/safe.png", "href": "portfolioModal5"},
+    {"src": "img/portfolio/submarine.png", "href": "portfolioModal6"}
+  ],
+  "invitation_items": [
+    {"src": "img/portfolio/cabin.png", "href": "portfolioModal1"},
+    {"src": "img/portfolio/circus.png", "href": "portfolioModal3"},
+    {"src": "img/portfolio/game.png", "href": "portfolioModal4"},
+  ]
+}
+
+gulp.task('handlebars', function() {
+    gulp.src("templates/*.html")
+        .pipe(handlebars(handlebars_vars))
+        .pipe(gulp.dest("./"))
+        .pipe(browserSync.reload({
+          stream: true
+        }))
+});
+
 // Default task
 gulp.task('default', ['sass', 'minify-css', 'minify-js', 'copy']);
 
@@ -102,11 +128,11 @@ gulp.task('browserSync', function() {
 })
 
 // Dev task with browserSync
-gulp.task('dev', ['browserSync', 'sass', 'minify-css', 'minify-js'], function() {
+gulp.task('dev', ['browserSync', 'sass', 'minify-css', 'minify-js', 'handlebars'], function() {
   gulp.watch('scss/*.scss', ['sass']);
   gulp.watch('css/*.css', ['minify-css']);
   gulp.watch('js/*.js', ['minify-js']);
   // Reloads the browser whenever HTML or JS files change
-  gulp.watch('*.html', browserSync.reload);
+  gulp.watch('templates/*.html', ['handlebars']);
   gulp.watch('js/**/*.js', browserSync.reload);
 });

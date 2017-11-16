@@ -4,6 +4,7 @@
 brew install node
 npm install
 gulp dev
+npm install mustache --save-dev
 ```
 
 # [Start Bootstrap - Freelancer](https://startbootstrap.com/template-overviews/freelancer/)
