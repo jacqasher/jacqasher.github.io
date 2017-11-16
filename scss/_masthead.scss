@@ -1,3 +1,14 @@
+header.masthead {
+  background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url('/img/IMGP1619.jpg') no-repeat center center;
+  color: #fff;
+  // TODO
+  min-height: 500px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+
 // Styling for the masthead
 header.masthead {
   padding-top: 100px;
@@ -5,7 +16,7 @@ header.masthead {
 
   text-align: center;
 
-  color: white;
+  // color: white;
   // background: $theme-success;
   img {
     display: block;
@@ -14,9 +25,9 @@ header.masthead {
   }
   .intro-text {
     .name {
-      font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-family: 'Cormorant Garamond', serif;
       font-size: 2em;
-      font-weight: 700;
+      font-weight: 400;
 
       display: block;
 

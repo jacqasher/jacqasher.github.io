@@ -1,28 +1,32 @@
 // Styling for the navbar
 #mainNav {
-  font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: 700;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
   text-transform: uppercase;
   border: none;
-  background: $theme-primary;
+  // background: $theme-primary;
+  background: $theme-light;
   a:focus {
     outline: none;
   }
   .navbar-brand {
     font-size: 1.1rem;
-    color: white;
+    // color: white;
+    color: $theme-success;
     &.active,
     &:active,
     &:focus,
     &:hover {
-      color: white;
+      // color: white;
+      color: $theme-success;
     }
   }
   .navbar-nav {
     letter-spacing: 1px;
     li.nav-item {
       a.nav-link {
-        color: white;
+        // color: white;
+        color: $theme-success;
         &:hover {
           color: $theme-success;
           outline: none;
