@@ -33,7 +33,8 @@
         }
         &:active,
         &:focus {
-          color: white;
+          // color: white;
+          color: $theme-success;
         }
       }
     }

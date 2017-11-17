@@ -122,7 +122,7 @@ section.success {
         color: #788188;
         outline: none; }
       #mainNav .navbar-nav li.nav-item a.nav-link:active, #mainNav .navbar-nav li.nav-item a.nav-link:focus {
-        color: white; }
+        color: #788188; }
   #mainNav .navbar-toggler {
     font-size: 14px;
     padding: 11px;
@@ -160,7 +160,7 @@ section.success {
       font-size: 1.5em; } }
 
 header.masthead {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/img/IMGP1619.jpg") no-repeat center center;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/img/landing-page-protea.jpg") no-repeat center center;
   color: #fff;
   min-height: 500px;
   -webkit-background-size: cover;
@@ -462,7 +462,7 @@ footer {
   outline: none; }
 
 #custom {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/img/IMGP1825.jpg") no-repeat center center;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/img/landing-page-succulent.jpg") no-repeat center center;
   color: #fff;
   min-height: 500px;
   -webkit-background-size: cover;
@@ -471,7 +471,7 @@ footer {
   -o-background-size: cover; }
 
 #about {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/img/IMGP1792.jpg") no-repeat center center;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/img/landing-page-gem.jpg") no-repeat center center;
   color: #fff;
   min-height: 500px;
   -webkit-background-size: cover;

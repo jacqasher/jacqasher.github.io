@@ -8,6 +8,9 @@ var uglify = require('gulp-uglify');
 var filter = require('gulp-filter');
 var handlebars = require('gulp-compile-handlebars');
 var pkg = require('./package.json');
+var fs = require('fs')
+// var parse = require('csv-parse')
+var d3_csv = require('d3-dsv')
 
 // Set the banner content
 var banner = ['/*!\n',
@@ -90,20 +93,18 @@ gulp.task('copy', function() {
     .pipe(gulp.dest('vendor/font-awesome'))
 })
 
+var contents = fs.readFileSync('img/product_list_startbootstrap.csv').toString();
+var rows = d3_csv.csvParse(contents)
+rows.forEach((row, i) => {
+  row['src'] = 'img/' + row['Image Src'].split(',')[0] //.filter(s => s !== '')
+  row['description'] = new handlebars.Handlebars.SafeString(row['Body (HTML)'])
+  row['title'] = row['Title']
+  row['href'] = 'portfolioModal' + i
+})
+
 var handlebars_vars = {
-  "portfolio_items": [
-    {"src": "img/portfolio/cabin.png", "href": "portfolioModal1"},
-    {"src": "img/portfolio/cake.png", "href": "portfolioModal2"},
-    {"src": "img/portfolio/circus.png", "href": "portfolioModal3"},
-    {"src": "img/portfolio/game.png", "href": "portfolioModal4"},
-    {"src": "img/portfolio/safe.png", "href": "portfolioModal5"},
-    {"src": "img/portfolio/submarine.png", "href": "portfolioModal6"}
-  ],
-  "invitation_items": [
-    {"src": "img/portfolio/cabin.png", "href": "portfolioModal1"},
-    {"src": "img/portfolio/circus.png", "href": "portfolioModal3"},
-    {"src": "img/portfolio/game.png", "href": "portfolioModal4"},
-  ]
+  'portfolio_items': rows.filter(r => r['Collection'] === 'Illustration'),
+  'invitation_items': rows.filter(r => r['Collection'] === 'Invitation'),
 }
 
 gulp.task('handlebars', function() {

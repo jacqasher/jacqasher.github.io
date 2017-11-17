@@ -1,8 +1,12 @@
 # jacq
 
+npm/node can be tough -> https://gist.github.com/rcugut/c7abd2a425bb65da3c61d8341cd4b02d
+
+https://github.com/BlackrockDigital/startbootstrap-freelancer
 ```
 brew install node
 npm install
+npm install --global gulp-cli
 gulp dev
 npm install mustache --save-dev
 ```
