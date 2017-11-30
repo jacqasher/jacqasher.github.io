@@ -19,7 +19,6 @@
 
     <!-- Custom styles for this template -->
     <link href="css/freelancer.min.css" rel="stylesheet">
-    <link href="css/custom.css" rel="stylesheet">
 
   </head>
 
@@ -68,13 +67,14 @@
         <div class="row">
           {{#invitation_items}}
           <div class="col-sm-4 portfolio-item">
-            <a class="portfolio-link" href="#{{href}}" data-toggle="modal">
+            <a class="portfolio-link" href="#{{id}}" data-toggle="modal">
               <div class="caption">
                 <div class="caption-content">
-                  <i class="fa fa-search-plus fa-3x"></i>
+                  {{title}}
+                  <!-- <i class="fa fa-search-plus fa-3x"></i> -->
                 </div>
               </div>
-              <img class="img-fluid" src="{{src}}" alt="">
+              <img class="img-fluid" src="{{images.0.src}}" alt="">
             </a>
           </div>
           {{/invitation_items}}
@@ -88,7 +88,7 @@
         <h2 class="text-center">Custom Designs</h2>
         <div class="row">
           <div class="col-lg-8 mx-auto text-center">
-            <a href="mailto:jacq@allebasi-anna.com?Subject=Greetings" target="_top" class="btn btn-lg btn-outline">
+            <a href="mailto:ja@allebasi-anna.com?Subject=Greetings" target="_top" class="btn btn-lg btn-outline">
               <i class="fa fa-envelope"></i>
               Email me
             </a>
@@ -105,13 +105,14 @@
         <div class="row">
           {{#portfolio_items}}
           <div class="col-sm-4 portfolio-item">
-            <a class="portfolio-link" href="#{{href}}" data-toggle="modal">
+            <a class="portfolio-link" href="#{{id}}" data-toggle="modal">
               <div class="caption">
                 <div class="caption-content">
-                  <i class="fa fa-search-plus fa-3x"></i>
+                  {{title}}
+                  <!-- <i class="fa fa-search-plus fa-3x"></i> -->
                 </div>
               </div>
-              <img class="img-fluid" src="{{src}}" alt="">
+              <img class="img-fluid" src="{{images.0.src}}" alt="">
             </a>
           </div>
           {{/portfolio_items}}
@@ -133,7 +134,7 @@
             <p>Utilizing my own graphic design I incorporate those illustrations into bespoke designs. We hope you find something you love, or follow me on Instagram or Pinterest to keep up with my latest creations! </p>
           </div>
           <div class="col-lg-8 mx-auto text-center">
-            <a href="mailto:jacq@allebasi-anna.com?Subject=Greetings" target="_top" class="btn btn-lg btn-outline">
+            <a href="mailto:ja@allebasi-anna.com?Subject=Greetings" target="_top" class="btn btn-lg btn-outline">
               <i class="fa fa-envelope"></i>
               Email me
             </a>
@@ -208,7 +209,7 @@
 
     <!-- Portfolio Modals -->
     {{#invitation_items}}
-    <div class="portfolio-modal modal fade" id="{{href}}" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="portfolio-modal modal fade" id="{{id}}" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="close-modal" data-dismiss="modal">
@@ -218,12 +219,29 @@
           </div>
           <div class="container">
             <div class="row">
-              <div class="col-lg-8 mx-auto">
+              <div class="col-lg-11 mx-auto">
                 <div class="modal-body">
                   <h2>{{title}}</h2>
-                  <!-- <hr class="star-primary"> -->
-                  <img class="img-fluid img-centered" src="{{src}}" alt="">
-                  {{description}}
+
+                  <div class="row">
+                    <div class="col-lg-7">
+
+                      <img class="img-fluid img-centered main-gallery-img" src="{{images.0.src}}" alt="">
+                      <!-- TODO could use bootstrap carousel eg. https://www.bootply.com/T60m4Y4X3D -->
+                      <div class="row">
+                        {{#images}}
+                          <div class="col-sm-2 gallery-img-div">
+                            <img class="img-fluid img-centered" src="{{src}}" alt="">
+                          </div>
+                        {{/images}}
+                      </div>
+
+                    </div>
+                    <div class="col-lg-5">
+                      {{description}}
+                    </div>
+                  </div>
+
                   <button class="btn btn-success" type="button" data-dismiss="modal">
                     <i class="fa fa-times"></i>
                     Close</button>
@@ -237,7 +255,7 @@
     {{/invitation_items}}
 
     {{#portfolio_items}}
-    <div class="portfolio-modal modal fade" id="{{href}}" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="portfolio-modal modal fade" id="{{id}}" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="close-modal" data-dismiss="modal">
@@ -250,8 +268,17 @@
               <div class="col-lg-8 mx-auto">
                 <div class="modal-body">
                   <h2>{{title}}</h2>
-                  <!-- <hr class="star-primary"> -->
-                  <img class="img-fluid img-centered" src="{{src}}" alt="">
+                  <img class="img-fluid img-centered main-gallery-img" src="{{images.0.src}}" alt="">
+
+                  <!-- TODO could use bootstrap carousel eg. https://www.bootply.com/T60m4Y4X3D -->
+                  <div class="row">
+                    {{#images}}
+                      <div class="col-sm-2 gallery-img-div">
+                        <img class="img-fluid img-centered" src="{{src}}" alt="">
+                      </div>
+                    {{/images}}
+                  </div>
+
                   {{description}}
                   <button class="btn btn-success" type="button" data-dismiss="modal">
                     <i class="fa fa-times"></i>
@@ -273,10 +300,6 @@
 
     <!-- Plugin JavaScript -->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Contact Form JavaScript -->
-    <!-- <script src="js/jqBootstrapValidation.js"></script> -->
-    <!-- <script src="js/contact_me.js"></script> -->
 
     <!-- Custom scripts for this template -->
     <script src="js/freelancer.min.js"></script>

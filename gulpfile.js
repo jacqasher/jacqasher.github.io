@@ -96,10 +96,12 @@ gulp.task('copy', function() {
 var contents = fs.readFileSync('img/product_list_startbootstrap.csv').toString();
 var rows = d3_csv.csvParse(contents)
 rows.forEach((row, i) => {
-  row['src'] = 'img/' + row['Image Src'].split(',')[0] //.filter(s => s !== '')
+  row['images'] = row['Image Src'].split(',').map(im => {
+    return {'src': 'img/' + im}
+  })
   row['description'] = new handlebars.Handlebars.SafeString(row['Body (HTML)'])
   row['title'] = row['Title']
-  row['href'] = 'portfolioModal' + i
+  row['id'] = 'portfolioModal' + i
 })
 
 var handlebars_vars = {
