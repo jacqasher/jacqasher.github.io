@@ -1,0 +1,24 @@
+// Variables
+
+// Gray and Brand Colors for use across theme
+// $theme-primary: #2C3E50;
+// $theme-success: #18BC9C;
+$theme-primary: #3d4246;
+$theme-success: #788188;
+
+$gray-base: #000;
+$gray-darker: lighten($gray-base, 13.5%);
+$gray-dark: lighten($gray-base, 20%);
+$gray: lighten($gray-base, 33.5%);
+$gray-light: lighten($gray-base, 46.7%);
+$gray-lighter: lighten($gray-base, 93.5%);
+
+$theme-light: #ffffff;
+
+// headings and links #3d4246
+// body text #788188
+// sale text #7796a8
+// borders and lines #e8e9eb
+// buttons #7796a8
+// button text #ffffff
+// small button text #3d4246

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Allebasi & Anna</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,400" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/freelancer.min.css" rel="stylesheet">
+
+  </head>
+
+  <body id="page-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">Allebasi & Anna</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#invitations">Invitations</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#portfolio">Illustrations</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#about">About</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="masthead">
+      <div class="container">
+        <div class="intro-text">
+          <span class="name">Allebasi & Anna</span>
+          <!-- <hr class="star-light"> -->
+          <span class="skills">Watercolor. Illustration. Design.</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Portfolio Grid Section -->
+    <section id="invitations">
+      <div class="container">
+        <h2 class="text-center">Invitations</h2>
+        <!-- <hr class="star-primary"> -->
+        <div class="row">
+          {{#invitation_items}}
+          <div class="col-sm-4 portfolio-item">
+            <a class="portfolio-link" href="#{{id}}" data-toggle="modal">
+              <div class="caption">
+                <div class="caption-content">
+                  {{title}}
+                  <!-- <i class="fa fa-search-plus fa-3x"></i> -->
+                </div>
+              </div>
+              <img class="img-fluid" src="{{images.0.src}}" alt="">
+            </a>
+          </div>
+          {{/invitation_items}}
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="success" id="custom">
+      <div class="container">
+        <h2 class="text-center">Custom Designs</h2>
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center">
+            <a href="mailto:ja@allebasi-anna.com?Subject=Greetings" target="_top" class="btn btn-lg btn-outline">
+              <i class="fa fa-envelope"></i>
+              Email me
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Grid Section -->
+    <section id="portfolio">
+      <div class="container">
+        <h2 class="text-center">Illustrations</h2>
+        <!-- <hr class="star-primary"> -->
+        <div class="row">
+          {{#portfolio_items}}
+          <div class="col-sm-4 portfolio-item">
+            <a class="portfolio-link" href="#{{id}}" data-toggle="modal">
+              <div class="caption">
+                <div class="caption-content">
+                  {{title}}
+                  <!-- <i class="fa fa-search-plus fa-3x"></i> -->
+                </div>
+              </div>
+              <img class="img-fluid" src="{{images.0.src}}" alt="">
+            </a>
+          </div>
+          {{/portfolio_items}}
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="success" id="about">
+      <div class="container">
+        <h2 class="text-center">About</h2>
+        <!-- <hr class="star-light"> -->
+        <div class="row">
+          <div class="col-lg-4 ml-auto">
+            <p>Hi I'm Jacqueline! Welcome. I love watercolor illustration and graphic design. This space combines the two and allows me to share my creations with you.
+              Every piece incorporates my own hand illustrations, crafted to fit the design of the final piece.</p>
+          </div>
+          <div class="col-lg-4 mr-auto">
+            <p>Utilizing my own graphic design I incorporate those illustrations into bespoke designs. We hope you find something you love, or follow me on Instagram or Pinterest to keep up with my latest creations! </p>
+          </div>
+          <div class="col-lg-8 mx-auto text-center">
+            <a href="mailto:ja@allebasi-anna.com?Subject=Greetings" target="_top" class="btn btn-lg btn-outline">
+              <i class="fa fa-envelope"></i>
+              Email me
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center">
+      <div class="footer-above">
+        <div class="container">
+          <div class="row">
+            <div class="footer-col col-md-4">
+              <h3>Location</h3>
+              <p>At Large
+                <br>Planet Earth</p>
+            </div>
+            <div class="footer-col col-md-4">
+              <h3>Around the Web</h3>
+              <ul class="list-inline">
+                <li class="list-inline-item">
+                  <a class="btn-social btn-outline" href="#">
+                    <i class="fa fa-fw fa-facebook"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a class="btn-social btn-outline" href="#">
+                    <i class="fa fa-fw fa-instagram"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a class="btn-social btn-outline" href="#">
+                    <i class="fa fa-fw fa-pinterest"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a class="btn-social btn-outline" href="#">
+                    <i class="fa fa-fw fa-dribbble"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="footer-col col-md-4">
+              <h3>Legal </h3>
+              <p>
+                <a href="/terms">Terms</a>
+              </p>
+              <p> Thanks to <a href="http://startbootstrap.com">Start Bootstrap</a> for the theme.</p>
+                <img class="img-startbootstrap img-fluid" src="img/profile.png" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-below">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">
+              Copyright &copy; Allebasi & Anna 2017
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+    <div class="scroll-top d-lg-none">
+      <a class="btn btn-primary js-scroll-trigger" href="#page-top">
+        <i class="fa fa-chevron-up"></i>
+      </a>
+    </div>
+
+    <!-- Portfolio Modals -->
+    {{#invitation_items}}
+    <div class="portfolio-modal modal fade" id="{{id}}" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="close-modal" data-dismiss="modal">
+            <div class="lr">
+              <div class="rl"></div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-11 mx-auto">
+                <div class="modal-body">
+                  <h2>{{title}}</h2>
+
+                  <div class="row">
+                    <div class="col-lg-7">
+
+                      <img class="img-fluid img-centered main-gallery-img" src="{{images.0.src}}" alt="">
+                      <!-- TODO could use bootstrap carousel eg. https://www.bootply.com/T60m4Y4X3D -->
+                      <div class="row">
+                        {{#images}}
+                          <div class="col-sm-2 gallery-img-div">
+                            <img class="img-fluid img-centered" src="{{src}}" alt="">
+                          </div>
+                        {{/images}}
+                      </div>
+
+                    </div>
+                    <div class="col-lg-5">
+                      {{description}}
+                    </div>
+                  </div>
+
+                  <button class="btn btn-success" type="button" data-dismiss="modal">
+                    <i class="fa fa-times"></i>
+                    Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {{/invitation_items}}
+
+    {{#portfolio_items}}
+    <div class="portfolio-modal modal fade" id="{{id}}" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="close-modal" data-dismiss="modal">
+            <div class="lr">
+              <div class="rl"></div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-8 mx-auto">
+                <div class="modal-body">
+                  <h2>{{title}}</h2>
+                  <img class="img-fluid img-centered main-gallery-img" src="{{images.0.src}}" alt="">
+
+                  <!-- TODO could use bootstrap carousel eg. https://www.bootply.com/T60m4Y4X3D -->
+                  <div class="row">
+                    {{#images}}
+                      <div class="col-sm-2 gallery-img-div">
+                        <img class="img-fluid img-centered" src="{{src}}" alt="">
+                      </div>
+                    {{/images}}
+                  </div>
+
+                  {{description}}
+                  <button class="btn btn-success" type="button" data-dismiss="modal">
+                    <i class="fa fa-times"></i>
+                    Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {{/portfolio_items}}
+
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/freelancer.min.js"></script>
+
+  </body>
+
+</html>

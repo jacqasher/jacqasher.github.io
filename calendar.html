@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<link href="https://fonts.googleapis.com/css?family=Loved+by+the+King" rel="stylesheet">
+<style type="text/css">
+body {
+  font-family: 'Loved by the King', cursive;
+  text-align: center;
+}
+rect {
+    fill: none;
+    stroke: black;
+}
+svg {
+  padding: 50px;
+}
+</style>
+
+<body>
+    <h2></h2>
+
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script>
+    // thanks https://bl.ocks.org/mbostock/raw/4063318/
+
+    function getParameterByName(name, url) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+    }
+
+    var year = +getParameterByName('year')
+    d3.select('h2').text(year)
+
+    for (var i = 0; i < 12; i++) {
+        render_month(i)
+    }
+
+    function render_month(month_i) {
+        var width = 350
+        var height = 350
+        var cellSize = 50
+
+        var svg = d3.select('body').append('svg')
+            .attr('width', width)
+            .attr('height', height)
+
+        svg.append('text')
+          .text(d3.timeFormat("%B")(new Date(year, month_i, 1)))
+          .attr('y', 20)
+
+      svg.selectAll('.day-name')
+            .data(d3.timeDays(new Date(year, month_i, 1), new Date(year, month_i + 1, 1)))
+            .enter()
+            .append('text')
+            .attr("class", 'day-name')
+            .attr("width", cellSize)
+            .attr("height", cellSize)
+            .attr("x", d => d3.timeFormat("%w")(d) * cellSize)
+            .attr("y", d => cellSize + (d3.timeFormat("%U")(d) - d3.timeFormat("%U")(new Date(d.getFullYear(), d.getMonth(), 1))) * cellSize)
+            .text(d => d3.timeFormat("%d")(d))
+
+    }
+    </script>
