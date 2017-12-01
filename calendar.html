@@ -31,7 +31,7 @@ svg {
         return decodeURIComponent(results[2].replace(/\+/g, " "));
     }
 
-    var year = +getParameterByName('year')
+    var year = +(getParameterByName('year') || 2018)
     d3.select('h2').text(year)
 
     for (var i = 0; i < 12; i++) {
@@ -49,13 +49,15 @@ svg {
 
         svg.append('text')
           .text(d3.timeFormat("%B")(new Date(year, month_i, 1)))
-          .attr('y', 20)
+            .attr("style", "font-family: 'Loved by the King', cursive;")
+            .attr('y', 20)
 
       svg.selectAll('.day-name')
             .data(d3.timeDays(new Date(year, month_i, 1), new Date(year, month_i + 1, 1)))
             .enter()
             .append('text')
             .attr("class", 'day-name')
+            .attr("style", "font-family: 'Loved by the King', cursive;")
             .attr("width", cellSize)
             .attr("height", cellSize)
             .attr("x", d => d3.timeFormat("%w")(d) * cellSize)
