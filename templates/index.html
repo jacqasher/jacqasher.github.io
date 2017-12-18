@@ -255,7 +255,7 @@
     {{/invitation_items}}
 
     {{#portfolio_items}}
-    <div class="portfolio-modal modal fade" id="{{id}}" tabindex="-1" role="dialog" aria-hidden="true">
+     <div class="portfolio-modal modal fade" id="{{id}}" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="close-modal" data-dismiss="modal">
@@ -265,21 +265,29 @@
           </div>
           <div class="container">
             <div class="row">
-              <div class="col-lg-8 mx-auto">
+              <div class="col-lg-11 mx-auto">
                 <div class="modal-body">
                   <h2>{{title}}</h2>
-                  <img class="img-fluid img-centered main-gallery-img" src="{{images.0.src}}" alt="">
 
-                  <!-- TODO could use bootstrap carousel eg. https://www.bootply.com/T60m4Y4X3D -->
                   <div class="row">
-                    {{#images}}
-                      <div class="col-sm-2 gallery-img-div">
-                        <img class="img-fluid img-centered" src="{{src}}" alt="">
+                    <div class="col-lg-7">
+
+                      <img class="img-fluid img-centered main-gallery-img" src="{{images.0.src}}" alt="">
+                      <!-- TODO could use bootstrap carousel eg. https://www.bootply.com/T60m4Y4X3D -->
+                      <div class="row">
+                        {{#images}}
+                          <div class="col-sm-2 gallery-img-div">
+                            <img class="img-fluid img-centered" src="{{src}}" alt="">
+                          </div>
+                        {{/images}}
                       </div>
-                    {{/images}}
+
+                    </div>
+                    <div class="col-lg-5">
+                      {{description}}
+                    </div>
                   </div>
 
-                  {{description}}
                   <button class="btn btn-success" type="button" data-dismiss="modal">
                     <i class="fa fa-times"></i>
                     Close</button>
