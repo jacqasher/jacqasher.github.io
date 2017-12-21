@@ -93,7 +93,7 @@ gulp.task('copy', function() {
     .pipe(gulp.dest('vendor/font-awesome'))
 })
 
-var contents = fs.readFileSync('img/product_list_startbootstrap.csv').toString();
+var contents = fs.readFileSync('img/product_list_startbootstrap - products.csv').toString();
 var rows = d3_csv.csvParse(contents)
 rows.forEach((row, i) => {
   row['images'] = row['Image Src'].split(',').map(im => {
